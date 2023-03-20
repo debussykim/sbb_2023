@@ -76,6 +76,13 @@ class SbbApplicationTests {
 		assertEquals(1, q.getId());
 	}
 
+	/*
+    SQL
+    SELECT *
+    FROM question
+    WHERE subject = 'sbb가 무엇인가요?'
+    AND content = 'sbb에 대해서 알고 싶습니다.'
+    */
 	@Test
 	@DisplayName("findBySubjectAndContent")
 	void t005() {
@@ -85,6 +92,12 @@ class SbbApplicationTests {
 		assertEquals(1, q.getId());
 	}
 
+	/*
+	SQL
+	SELECT *
+	FROM question
+	WHERE subject LIKE 'sbb%'
+	 */
 	@Test
 	@DisplayName("findBySubjectAndContent")
 	void t006() {
