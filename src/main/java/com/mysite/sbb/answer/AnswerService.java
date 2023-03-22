@@ -20,8 +20,4 @@ public class AnswerService {
         answer.setQuestion(question);
         this.answerRepository.save(answer);
     }
-
-    public List<Answer> getAnswersByQuestionId(Integer id) {
-        return answerRepository.findByQuestionId(id);
-    }
 }

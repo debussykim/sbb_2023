@@ -19,5 +19,7 @@
   <button type="submit">답변등록</button>
 </form>
 <div>
-  [[${answers}]]
+  <ul>
+    <li th:each="answer : ${question.answerList}" th:text="|${answer.id}번답변 : ${answer.content}|"></li>
+  </ul>
 </div>
