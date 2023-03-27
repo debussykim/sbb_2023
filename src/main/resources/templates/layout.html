@@ -6,6 +6,7 @@
     <!-- 모바일 디바이스에서 화면이 축소되는 것을 방지 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
     <!-- sbb CSS -->
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
@@ -23,6 +24,8 @@
         <li><a href="/sbb">SBB! 란</a></li>
     </ul>
 </div>
+<!-- 내비게이션바 -->
+<nav th:replace="~{navbar :: navbarFragment}"></nav>
 
 <!-- 기본 템플릿 안에 삽입될 내용 Start -->
 <th:block layout:fragment="content"></th:block>
