@@ -34,7 +34,7 @@ public class AnswerController {
             return "question_detail";
         }
 
-        answerService.create(question, answerForm.getContent());
-        return String.format("redirect:/question/detail/%s", id);
+        Answer answer = answerService.create(question, answerForm.getContent());
+        return "redirect:/question/detail/%d".formatted(id);
     }
 }
