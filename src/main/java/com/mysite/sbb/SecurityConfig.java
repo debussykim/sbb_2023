@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -14,12 +15,15 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                /*
                 .authorizeHttpRequests(
                         authorizeHttpRequests -> authorizeHttpRequests
                                 .requestMatchers(new AntPathRequestMatcher("/question/list")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/question/detail/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/user/login")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/style.css")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/")).permitAll()
+                                .anyRequest().authenticated()
                 )
-                */
                 .formLogin(
                         formLogin -> formLogin
                                 .loginPage("/user/login")
