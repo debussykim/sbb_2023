@@ -15,7 +15,6 @@ public class UserService {
         SiteUser user = new SiteUser();
         user.setUsername(username);
         user.setEmail(email);
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         user.setPassword(passwordEncoder.encode(password));
         userRepository.save(user);
         return user;
