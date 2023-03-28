@@ -17,4 +17,10 @@ public class MainController {
     public String root() {
         return "redirect:/question/list";
     }
+
+    @GetMapping("/test2")
+    @ResponseBody
+    public String showTest() {
+        return "테스트";
+    }
 }
