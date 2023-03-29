@@ -29,6 +29,7 @@ public class Question {
     private String content;
 
     private LocalDateTime createDate;
+    private LocalDateTime modifyDate;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     @LazyCollection(LazyCollectionOption.EXTRA) // answerList.size() 함수가 실행될 때 select count 실행
