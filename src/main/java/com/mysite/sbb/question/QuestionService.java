@@ -36,12 +36,12 @@ public class QuestionService {
         return oq.get();
     }
 
-    public Question create(String subject, String content, SiteUser user) {
+    public Question create(String subject, String content, SiteUser author) {
         Question q = new Question();
+        q.setCreateDate(LocalDateTime.now());
         q.setSubject(subject);
         q.setContent(content);
-        q.setCreateDate(LocalDateTime.now());
-        q.setAuthor(user);
+        q.setAuthor(author);
         questionRepository.save(q);
 
         return q;

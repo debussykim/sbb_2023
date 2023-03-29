@@ -16,9 +16,9 @@ public class AnswerService {
 
     public Answer create(Question question, String content, SiteUser author) {
         Answer answer = new Answer();
-        answer.setContent(content);
         answer.setCreateDate(LocalDateTime.now());
-        answer.setQuestion(question);
+        question.addAnswer(answer);
+        answer.setContent(content);
         answer.setAuthor(author);
         answerRepository.save(answer);
 
