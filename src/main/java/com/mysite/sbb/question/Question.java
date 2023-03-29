@@ -41,7 +41,7 @@ public class Question {
     private SiteUser author;
 
     @ManyToMany
-    private Set<SiteUser> votes = new LinkedHashSet<>();
+    private Set<SiteUser> voters = new LinkedHashSet<>();
 
 
     public void addAnswer(Answer a) {
