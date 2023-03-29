@@ -1,6 +1,7 @@
 package com.mysite.sbb.question;
 
 import com.mysite.sbb.answer.Answer;
+import com.mysite.sbb.user.SiteUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,6 +33,9 @@ public class Question {
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     @LazyCollection(LazyCollectionOption.EXTRA) // answerList.size() 함수가 실행될 때 select count 실행
     private List<Answer> answerList  = new ArrayList<>(); // 직접 객체 초기화
+
+    @ManyToOne
+    private SiteUser author;
 
     public void addAnswer(Answer a) {
         a.setQuestion(this);
